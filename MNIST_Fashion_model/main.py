@@ -83,7 +83,7 @@ model.compile(
 
 #5-training and testing the model
 #____________________
-model.fit(train_images,train_labels,epochs=10)  #training
+model.fit(train_images,train_labels,epochs=1)  #training
 
 test_loss , test_accuracy = model.evaluate(test_images,test_labels,verbose=1)
 print("Test accuracy :", test_accuracy*100,'%')
@@ -94,13 +94,18 @@ print("Test accuracy :", test_accuracy*100,'%')
 
 predictions = model.predict(test_images)
 
-tmp = np.argmax(predictions[0])    #this will give me the index of the highest probability
-print(class_names[tmp])
-
-plt.figure()
-plt.xticks([])
-plt.yticks([])
-plt.grid(False)
-plt.imshow(test_images[0], cmap=plt.cm.binary)
-plt.xlabel(class_names[test_labels[0]])
-plt.show()
+while True:
+    i = input("choose an integer number: ")
+    if i.isdigit():
+        i = int(i)
+        tmp = np.argmax(predictions[i])  # this will give me the index of the highest probability
+        print("the model prediction is ",class_names[tmp])
+        plt.figure()
+        plt.xticks([])
+        plt.yticks([])
+        plt.grid(False)
+        plt.imshow(test_images[i], cmap=plt.cm.binary)
+        plt.xlabel(class_names[test_labels[i]])
+        plt.show()
+    else:
+        break
