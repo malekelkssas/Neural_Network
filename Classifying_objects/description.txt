@@ -1,0 +1,6 @@
+the problem is classifying 10 different everyday objects
+,the dataset will use is built into tensorflow and called
+CIFAR Image Dataset, it contains 60,000 32*32 color images
+with 6000 images of each class.
+the label in this dataset are the following
+['Airplane',"Automobile","Bird","Cat","Deer","Dog","Frog","Horse","Ship","Truck"]
