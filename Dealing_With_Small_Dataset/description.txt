@@ -1,0 +1,2 @@
+If the dataset for training the model is small,
+these are two efficient techniques for solving the problem.
